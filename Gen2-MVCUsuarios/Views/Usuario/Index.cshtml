@@ -1,0 +1,76 @@
+﻿@model  IEnumerable<Usuarios>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>LISTADO DE USUARIOS</h1>
+
+<div class="row">
+    <div class="col-12">
+        <div class="float-right">
+            <a class="btn btn-info" asp-controller="Usuario" asp-action="Create">
+                Agregar Usuario
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-body">
+            <div class="table-responsive">
+                @if (Model.Count() > 0)
+                {
+                    <table class="table table-bordered" id="tablaUsuarios" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>@Html.DisplayNameFor(u => u.Id)</th>
+                                <th>@Html.DisplayNameFor(u => u.Nombre)</th>
+                                <th>@Html.DisplayNameFor(u => u.ApPaterno)</th>
+                                <th>@Html.DisplayNameFor(u => u.ApMaterno)</th>
+                                <th>@Html.DisplayNameFor(u => u.Telefono)</th>
+                                <th>@Html.DisplayNameFor(u => u.Correo)</th>
+                                <th>@Html.DisplayNameFor(u => u.FechaNac)</th>
+                                <th>@Html.DisplayNameFor(u => u.Direccion)</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(Usuarios usr in Model)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(u => usr.Id)</td>
+                                    <td>@Html.DisplayFor(u => usr.Nombre)</td>
+                                    <td>@Html.DisplayFor(u => usr.ApPaterno)</td>
+                                    <td>@Html.DisplayFor(u => usr.ApMaterno)</td>
+                                    <td>@Html.DisplayFor(u => usr.Telefono)</td>
+                                    <td>@Html.DisplayFor(u => usr.Correo)</td>
+                                    <td>@Html.DisplayFor(u => usr.FechaNac)</td>
+                                    <td>@Html.DisplayFor(u => usr.Direccion)</td>
+                                    <td>
+                                        <a class="btn btn-success" asp-controller="Usuario" asp-action="Detail" asp-route-id="@usr.Id">
+                                            Detalles
+                                        </a>
+                                        <a class="btn btn-secondary" asp-controller="Usuario" asp-action="Edit" asp-route-id="@usr.Id">
+                                            Editar
+                                        </a>
+                                        <a class="btn btn-danger" asp-controller="Usuario" asp-action="Delete" asp-route-id="@usr.Id">
+                                            Eliminar
+                                        </a>
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }else{
+                    <p>
+                        No hay datos
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

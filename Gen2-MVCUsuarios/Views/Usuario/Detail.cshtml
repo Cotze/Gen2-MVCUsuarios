@@ -1,0 +1,53 @@
+﻿@model Usuarios
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-header">
+            <h3>
+                <strong>DETALLE DEL USUARIO</strong>
+            </h3>
+        </div>
+
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Id:</strong>
+                    @Html.DisplayFor(u => u.Id)
+                </li>
+                <li class="list-group-item">
+                    <strong>Nombre:</strong>
+                    @Html.DisplayFor(u => u.Nombre)
+                </li>
+                <li class="list-group-item">
+                    <strong>Apellido Paterno:</strong>
+                    @Html.DisplayFor(u => u.ApPaterno)
+                </li>
+                <li class="list-group-item">
+                    <strong>Apellido Materno:</strong>
+                    @Html.DisplayFor(u => u.ApMaterno)
+                </li>
+                <li class="list-group-item">
+                    <strong>Telefono:</strong>
+                    @Html.DisplayFor(u => u.Telefono)
+                </li>
+                <li class="list-group-item">
+                    <strong>Correo:</strong>
+                    @Html.DisplayFor(u => u.Correo)
+                </li>
+                <li class="list-group-item">
+                    <strong>Fecha de nacimiento:</strong>
+                    @Html.DisplayFor(u => u.FechaNac)
+                </li>
+                <li class="list-group-item">
+                    <strong>Dirección:</strong>
+                    @Html.DisplayFor(u => u.Direccion)
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

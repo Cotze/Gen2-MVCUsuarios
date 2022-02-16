@@ -1,0 +1,64 @@
+﻿@model Usuarios
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h1 class="text-center">
+            <strong>REGISTRO DE USUARIO</strong>
+        </h1>
+
+    </div>
+</div
+
+<div class="row">
+    <div class="card-body">
+        <form asp-controller="Usuario" asp-action="insert" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger">
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApPaterno" class="control-label"></label>
+                <input asp-for="ApPaterno" class="form-control" />
+                <span asp-validation-for="ApPaterno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApMaterno" class="control-label"></label>
+                <input asp-for="ApMaterno" class="form-control" />
+                <span asp-validation-for="ApMaterno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefono" class="control-label"></label>
+                <input asp-for="Telefono" class="form-control" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Correo" class="control-label"></label>
+                <input asp-for="Correo" class="form-control" />
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaNac" class="control-label"></label>
+                <input asp-for="FechaNac" class="form-control" />
+                <span asp-validation-for="FechaNac" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Direccion" class="control-label"></label>
+                <input asp-for="Direccion" class="form-control" />
+                <span asp-validation-for="Direccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-dark">
+                    Guardar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
